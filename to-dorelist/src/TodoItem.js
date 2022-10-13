@@ -1,13 +1,11 @@
+import "./TodoItem.css"
 
-
-function TodoItem(props){
+export function TodoItem(props){
     return(
         <li className="To-do-Item">
-            <span>C</span>
-            <p>{props.text}</p>
-            <span>X</span>
+            <span className="completado">✓</span>
+            <p className="tarea">{props.text}</p>
+            <span className="equis">X</span>
         </li>
     );
 }
-
-export { TodoItem };

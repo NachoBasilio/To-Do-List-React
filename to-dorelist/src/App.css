@@ -13,7 +13,7 @@ html, body, #app, #app>div {
   position: relative;
   flex-direction: column;
   background: rgba(122, 235, 255, 0.659);
-  padding: 30px;
+  padding: 20px;
   padding-top: 120px;
   border-radius: 10px;
   width: 80%;

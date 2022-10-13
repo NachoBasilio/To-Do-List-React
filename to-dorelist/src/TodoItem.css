@@ -1,0 +1,18 @@
+.To-do-Item{
+    display: flex;
+}
+
+.tarea{
+    text-align: left;
+    margin-left: 30px;
+}
+.equis{
+    margin-left: auto;
+}
+.equis:hover{
+    color: red;
+}
+
+.completado:hover{
+    color: green;
+}
