@@ -15,16 +15,16 @@ const lista = [
 ]
 
 function App() {
-  return (
+  return(
     <Fragment>
       <TodoCounter/>
       <TodoSearch/>
       <TodoList>
         {lista.map(todo=>(
-          <TodoItem key={todo.key} text={todo.text}/>
+          <TodoItem  key={todo.key} text={todo.text}/>
         ))}
       </TodoList>
-      <CreateTodoButton/>
+      <CreateTodoButton />
     </Fragment>
   );
 }

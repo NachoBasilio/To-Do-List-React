@@ -2,7 +2,7 @@
 
 function TodoItem(props){
     return(
-        <li>
+        <li className="To-do-Item">
             <span>C</span>
             <p>{props.text}</p>
             <span>X</span>
