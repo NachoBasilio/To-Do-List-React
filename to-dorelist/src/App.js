@@ -17,7 +17,9 @@ const lista = [
 function App() {
   return(
     <Fragment>
-      <TodoCounter/>
+      <div className="Contenedor_De_Titulo">
+        <TodoCounter/>
+      </div> 
       <TodoSearch/>
       <TodoList>
         {lista.map(todo=>(

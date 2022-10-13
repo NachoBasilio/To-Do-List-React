@@ -10,13 +10,32 @@ html, body, #app, #app>div {
 
 #root{
   display: flex; 
+  position: relative;
   flex-direction: column;
   background: rgba(122, 235, 255, 0.659);
   padding: 30px;
+  padding-top: 120px;
   border-radius: 10px;
-  width: 40%;
-  margin-top: 100px;
+  width: 80%;
+  margin-top: 50px;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
+  -webkit-box-shadow: 13px 15px 25px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 15px 25px 0px rgba(0,0,0,0.75);
+  box-shadow: 13px 15px 25px 0px rgba(0,0,0,0.75);
+}
+
+.Contenedor_De_Titulo{
+  background-color: white;
+  position: absolute;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0; 
 }
