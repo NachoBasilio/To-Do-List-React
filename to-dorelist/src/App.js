@@ -11,7 +11,9 @@ import TodoSearch from "./TodoSearch.js";
 const lista = [
   {text: 'Hacer cosas', complete: false, key:1},
   {text: 'Hacer Tareas', complete: false, key:2},
-  {text: 'Hacer Eso', complete: false, key:3}
+  {text: 'Hacer Eso', complete: false, key:3},
+  {text: 'Hacer Eso', complete: false, key:4},
+  {text: 'Hacer Eso', complete: false, key:5}
 ]
 
 function App() {

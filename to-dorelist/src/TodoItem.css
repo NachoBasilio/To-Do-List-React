@@ -16,3 +16,7 @@
 .completado:hover{
     color: green;
 }
+
+.TextoCompletado {
+    text-decoration:line-through;
+}
