@@ -1,10 +1,10 @@
 import './App.css';
 import React, { Fragment } from "react";
-import CreateTodoButton from "./CreateTodoButton.js";
-import { TodoCounter } from "./TodoCounter.js";
-import { TodoItem } from "./TodoItem.js";
-import TodoList from "./TodoList.js";
-import TodoSearch from "./TodoSearch.js";
+import CreateTodoButton from "../CreateTodoButton/index";
+import { TodoCounter } from "../TodoCounter/index";
+import { TodoItem } from "../TodoItem";
+import TodoList from "../TodoList";
+import TodoSearch from "../TodoSearch";
 
 
 
