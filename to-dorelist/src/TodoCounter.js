@@ -1,8 +1,8 @@
 import "./TodoCounter.css"
 
-export function TodoCounter(){
+export function TodoCounter({total, complete}){
     return (   
-        <h2 className="titulo">Has completado 2 de 3 TODOs</h2>
+        <h2 className="titulo">Has completado {complete} de {total} TODOs</h2>
     )
 
 }

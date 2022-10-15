@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import "./TodoSearch.css"
 
-export default function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState("")
+export default function TodoSearch({searchValue, setSearchValue}) {
 
   const onSearchValueChange = (event)=>{
     setSearchValue(event.target.value)
