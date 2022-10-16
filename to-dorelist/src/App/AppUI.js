@@ -6,7 +6,7 @@ import TodoList from "../TodoList";
 import TodoSearch from "../TodoSearch";
 
 
-export default function AppUI({total,completeTodo,searchValue,setSearchValue,searchedTodos,completeTodos,deleteTodos}) {
+export default function AppUI({loading,error,total,completeTodo,searchValue,setSearchValue,searchedTodos,completeTodos,deleteTodos}) {
   return (
         <Fragment>
       <div className="Contenedor_De_Titulo">
@@ -20,6 +20,9 @@ export default function AppUI({total,completeTodo,searchValue,setSearchValue,sea
       setSearchValue={setSearchValue}
       />
       <TodoList>
+      {error && <p>Desespérate, hubo un error...</p>}
+      {loading && <p>Estamos cargando, no desesperes...</p>}
+      {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
         {searchedTodos.map(todo=>(
           <TodoItem  
           key={todo.key} 

@@ -2,19 +2,63 @@ import './App.css';
 import AppUI from './AppUI';
 import React from "react";
 
+function useLocalStorage(itemName, initialValue) {
+  const [error, setError] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const [item, setItem] = React.useState(initialValue)
+
+  React.useEffect(()=>{
+    try{
+      setTimeout(()=> {
+      
+        const localStorageItem = localStorage.getItem(itemName)
+        let parsedItem;
+      
+      
+        if(!localStorageItem) {
+          localStorage.setItem(itemName, JSON.stringify(initialValue))
+          parsedItem = initialValue
+        }else{
+          parsedItem = JSON.parse(localStorageItem)
+        }
+        setItem(parsedItem)
+        setLoading(false)
+        },2000)
+    }catch(e){
+      setError(e)
+    }
+  })
 
 
-const defaultlista = [
-  {text: 'Hacer cosas', completed: false, key:1},
-  {text: 'Hacer Tareas', completed: false, key:2},
-  {text: 'Hacer Esao', completed: false, key:3},
-  {text: 'Hacer Esso', completed: false, key:4},
-  {text: 'Hacer Eseo', completed: false, key:5}
-]
+  const saveItems = (newItems) => {
+    try {
+      const stringifiedItems = JSON.stringify(newItems)
+      localStorage.setItem(itemName, stringifiedItems)
+      setItem(newItems)
+    } catch (error) {
+      setError(error)
+    }
+  }
+  return {
+    item,
+    saveItems,
+    loading,
+    error,
+  };
+}
+
 
 function App() {
+  const {
+    item: todoValue,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage('TODOS_V1', []);
+  
+
   //Buscador de todos
-  const [todoValue, setTodoValues] = React.useState(defaultlista)
+ 
   const [searchValue, setSearchValue] = React.useState("")
 
   const completeTodo = todoValue.filter(todo => !!todo.complete).length
@@ -39,8 +83,7 @@ function App() {
     const indiceTodoACompletar = todoValue.findIndex(todo => todo.key === id)
     const newTodos = [...todoValue]
     newTodos[indiceTodoACompletar].completed = true
-    setTodoValues(newTodos)
-    console.log(todoValue)
+    saveTodos(newTodos)
   }
 
   //Eliminar
@@ -48,11 +91,14 @@ function App() {
     const indiceTodoACompletar = todoValue.findIndex(todo => todo.key === id)
     const newTodos = [...todoValue]
     newTodos.splice(indiceTodoACompletar,1)
-    setTodoValues(newTodos)
+    saveTodos(newTodos)
   }
+
 
   return(
     <AppUI 
+    loading={loading}
+    error={error}
     total={total} 
     completeTodo={completeTodo} 
     searchValue={searchValue} 
