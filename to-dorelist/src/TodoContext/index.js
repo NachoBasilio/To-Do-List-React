@@ -16,7 +16,7 @@ function TodoProvider(props){
      
       const [searchValue, setSearchValue] = React.useState("")
     
-      const completeTodo = todoValue.filter(todo => !!todo.complete).length
+      const complete = todoValue.filter(todo => !!todo.complete).length
       const total = todoValue.length
     
       let searchedTodos = []
@@ -55,7 +55,7 @@ function TodoProvider(props){
             loading,
             error,
             total, 
-            completeTodo,
+            complete,
             searchValue, 
             setSearchValue, 
             searchedTodos,
