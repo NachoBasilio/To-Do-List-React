@@ -1,15 +1,15 @@
 import "./CreateTodoButton.css"
 
-export default function CreateTodoButton() {
-  const onClickButton = (Mensaje)=>{
-    alert(Mensaje)
+export default function CreateTodoButton({setOpenModal}) {
+  const onClickButton = ()=>{
+    setOpenModal(true)
   }
 
 
   return (
     <button 
     className="Buton"
-    onClick={()=>{onClickButton("Bueeenas")}}
+    onClick={()=>{onClickButton()}}
     >
     AGREGAR 
     </button>

@@ -15,7 +15,7 @@ function TodoProvider(props){
       //Buscador de todos
      
       const [searchValue, setSearchValue] = React.useState("")
-    
+      const [openModal, setOpenModal] = React.useState(false)
       const complete = todoValue.filter(todo => !!todo.complete).length
       const total = todoValue.length
     
@@ -61,6 +61,8 @@ function TodoProvider(props){
             searchedTodos,
             completeTodos, 
             deleteTodos,
+            openModal,
+            setOpenModal
         }}>
         {props.children}
         </TodoContext.Provider>
