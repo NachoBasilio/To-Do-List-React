@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { TodoContext } from "../TodoContext";
-
+import { TodoForm } from "../TodoForm";
 import CreateTodoButton from "../CreateTodoButton/index";
 import { TodoCounter } from "../TodoCounter/index";
 import { TodoItem } from "../TodoItem";
@@ -44,7 +44,7 @@ export default function AppUI() {
 
       {!!openModal &&(
         <Modal>
-          <p>{searchedTodos[0]?.text}</p>
+          <TodoForm />
         </Modal>
       )}
       <CreateTodoButton 
