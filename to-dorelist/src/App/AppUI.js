@@ -25,7 +25,7 @@ export default function AppUI() {
       </div> 
       <TodoSearch/>      
       <TodoList>
-        {error && <p>Desespérate, hubo un error...</p>}
+        {error && <p>Desespérate, hubo un error... Loquito</p>}
         {loading && <p>Estamos cargando, no desesperes...</p>}
         {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
         {searchedTodos.map(todo=>(
